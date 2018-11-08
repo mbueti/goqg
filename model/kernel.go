@@ -1,6 +1,6 @@
 package model
 
-type kernel struct {
+type PseudoSpectralKernel struct {
 	q            [3][]float64
 	qh           [3][]complex64
 	Qh           [3][]complex64
@@ -33,4 +33,18 @@ type kernel struct {
 	filter       [2][]float64
 	rek          float64
 	rbg          float64
+	dt           float64
+	tc           int64
+	t            float64
+	ablLevel     int64
+	numThreads   int
+	chunkSize    int
+	fftQToQh     []float64
+	ifftQhToQ    []float64
+	ifftUhToU    []float64
+	ifftVhToV    []float64
+	fftUqToUqh   []float64
+	fftVqToVqh   []float64
+	dummyFFT     []float64
+	dummyIFFT    []float64
 }
